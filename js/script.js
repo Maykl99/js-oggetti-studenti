@@ -5,16 +5,6 @@ Stampare a schermo attraverso il for in tutte le proprietà.
 Usate prima i console.log e poi provare a stampare con jQuery:
 BONUS: Provate ad utilizzare Handlebars. */
 
-//utilizzo Handlebars
-var source = document.getElementById("entry-template").innerHTML;
-var template = Handlebars.compile(source);
-
-var context = { title: "Lista degli studenti", nominativo: "Nome e Cognome"};
-var html = template(context);
-
-
-
-document.querySelector('div.container').innerHTML=html;
 
 // 1. creazione oggetto singolo studente
 oggettoStudente={
@@ -52,24 +42,33 @@ var listaStudenti=[
 
 
 
-// 5. creazione oggetto da parte dell'utente
+// 4. creazione oggetto da parte dell'utente
 var nome=prompt('Inserisci un nome');
 var cognome=prompt('Inserisci un cognome');
 var eta= prompt("Inserisci la tua età")
 
-// 6. nuovo oggetto creato
+// 5. nuovo oggetto creato
 listaStudenti.push({
     'nome': nome,
     'cognome': cognome,
     'eta': eta,
 })
 
-// 4. ciclo su tutti gli oggetti, stampo nome e cognome per ogni studente
+// 6. ciclo su tutti gli oggetti, stampo nome e cognome per ogni studente
 for(var i in listaStudenti){
     console.log(listaStudenti[i].nome + ' ' + listaStudenti[i].cognome);
-    document.querySelector('div.container').innerHTML+=listaStudenti[i].nome + ' ' + listaStudenti[i].cognome + '<br>';
+    //document.querySelector('div.container').innerHTML+=listaStudenti[i].nome + ' ' + listaStudenti[i].cognome + '<br>';
 }
 
 
 
 console.log(listaStudenti);
+
+//7. utilizzo Handlebars
+var source = document.getElementById("entry-template").innerHTML;
+var template = Handlebars.compile(source);
+
+for(var i=0; i<listaStudenti.length; i++){
+    var context= template(listaStudenti[i]);
+    document.querySelector('div.container').innerHTML+=context;
+}
