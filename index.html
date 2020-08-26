@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js" integrity="sha512-zT3zHcFYbQwjHdKjCu6OMmETx8fJA9S7E6W7kBeFxultf75OPTYUJigEKX58qgyQMi1m1EgenfjMXlRZG8BXaw==" crossorigin="anonymous"></script>
     <title>Document</title>
+    <style>
+        h3{
+            margin: 10px 0;
+        }
+    </style>
 </head>
 <body>
+    <div class="container"></div>
+
+   
+    <script id="entry-template" type="text/x-handlebars-template">
+        <div class="entry">
+          <h1>{{title}}</h1>
+          <div class="body">
+              <h3>{{nominativo}}</h3>
+          </div>
+        </div>
+    </script>
+
     <script src="js/script.js"></script>
 </body>
 </html>

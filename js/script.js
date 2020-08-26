@@ -5,6 +5,17 @@ Stampare a schermo attraverso il for in tutte le proprietà.
 Usate prima i console.log e poi provare a stampare con jQuery:
 BONUS: Provate ad utilizzare Handlebars. */
 
+//utilizzo Handlebars
+var source = document.getElementById("entry-template").innerHTML;
+var template = Handlebars.compile(source);
+
+var context = { title: "Lista degli studenti", nominativo: "Nome e Cognome"};
+var html = template(context);
+
+
+
+document.querySelector('div.container').innerHTML=html;
+
 // 1. creazione oggetto singolo studente
 oggettoStudente={
     'nome': 'Marco',
@@ -23,19 +34,19 @@ var listaStudenti=[
     {
         'nome': 'Claudio',
         'cognome': 'Bianchi',
-        'eta': 21 
+        'eta': 21,
     },
 
     {
         'nome': 'Ivan',
         'cognome': 'Ricciardelli',
-        'eta': 45 
+        'eta': 45,
     },
     
     {
         'nome': 'Matteo',
         'cognome': 'Rossi',
-        'eta': 26
+        'eta': 26,
     }
 ]
 
@@ -56,6 +67,9 @@ listaStudenti.push({
 // 4. ciclo su tutti gli oggetti, stampo nome e cognome per ogni studente
 for(var i in listaStudenti){
     console.log(listaStudenti[i].nome + ' ' + listaStudenti[i].cognome);
+    document.querySelector('div.container').innerHTML+=listaStudenti[i].nome + ' ' + listaStudenti[i].cognome + '<br>';
 }
+
+
 
 console.log(listaStudenti);
