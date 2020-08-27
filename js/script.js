@@ -11,12 +11,12 @@ var oggettoStudente={
     'nome': 'Marco',
     'cognome': 'Verdi',
     'eta': 31
-}
+};
 
 // 2. stampo proprieta dell'oggetto singolo studente
 for(key in oggettoStudente){
     console.log( ` ${key}` + ' ' + oggettoStudente[key])
-}
+};
 
 // 3. creare un array di oggetti studenti
 var listaStudenti=[
@@ -45,20 +45,20 @@ var listaStudenti=[
 // 4. creazione oggetto da parte dell'utente
 var nome=prompt('Inserisci un nome');
 var cognome=prompt('Inserisci un cognome');
-var eta= prompt("Inserisci la tua età")
+var eta= prompt("Inserisci la tua età");
 
 // 5. nuovo oggetto creato
 listaStudenti.push({
     'nome': nome,
     'cognome': cognome,
     'eta': eta,
-})
+});
 
 // 6. ciclo su tutti gli oggetti, stampo nome e cognome per ogni studente
 for(var i in listaStudenti){
     console.log(listaStudenti[i].nome + ' ' + listaStudenti[i].cognome);
     //document.querySelector('div.container').innerHTML+=listaStudenti[i].nome + ' ' + listaStudenti[i].cognome + '<br>';
-}
+};
 
 
 
