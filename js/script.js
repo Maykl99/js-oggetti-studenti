@@ -7,7 +7,7 @@ BONUS: Provate ad utilizzare Handlebars. */
 
 
 // 1. creazione oggetto singolo studente
-oggettoStudente={
+var oggettoStudente={
     'nome': 'Marco',
     'cognome': 'Verdi',
     'eta': 31
