@@ -61,7 +61,6 @@ for(var i in listaStudenti){
 };
 
 
-
 console.log(listaStudenti);
 
 //7. utilizzo Handlebars
